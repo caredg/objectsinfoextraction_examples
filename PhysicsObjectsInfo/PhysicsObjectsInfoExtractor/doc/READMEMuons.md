@@ -1,6 +1,6 @@
-#Muon Information Extractor
+# Muon Information Extractor
 
-##Description
+## Description
 
 These instructions are an example of the simplest way to extract information 
 from a CMS EDM root file in order to do research or outreach/education.  
@@ -32,6 +32,41 @@ twiki pages were added as much as possible.  They can be read to
 expand the scope of the example.
 
 ## Usage Instructions
+
+First you have to create a [VM](http://opendata.cern.ch/VM/CMS "CMS Open Data Portal") from the CMS Open Data website. 
+
+Then follow these steps:
+
+- Create a CMSSW environment: 
+
+    ```
+    cmsrel CMSSW_5_3_32
+    ```
+
+- Change to the CMSSW_5_3_32/src/ directory:
+
+    ```
+    cd CMSSW_5_3_32/src/
+    ```
+
+- Initialize the CMSSW environment:
+
+  ```
+  cmsenv
+  ```
+
+- Obtain the code from git (in sparse mode) and move it to the `src` area:
+
+  ```   
+  git clone --no-checkout git://github.com/caredg/objectsinfoextraction_examples.git
+  cd objectsinfoextraction_examples
+  git config core.sparseCheckout true
+  echo 'PhysicsObjectsInfo/PhysicsObjectsInfoExtractor' > .git/info/sparse-checkout
+  git checkout   
+  mv PhysicsObjectsInfo ../.
+  cd ..
+  rm -rf objectsinfoextraction_examples
+
 
 
 

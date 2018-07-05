@@ -97,17 +97,4 @@ cmsRun muonobjectextractor_cfg.py > muons.log 2>&1 &
 tailf muons.log
 ```
 
-
-As a result, you will get a - Run the CMSSW executable in the background
-
-```
-cmsRun triggerinfoanalyzer_cfg.py > full.log 2>&1 &
-```
-
-- Check the development of the job:
-
-```
-tailf full.log
-```
-
-As a result, you will get a *MuonObjectInfo.root* file with simple variables. 
+As a result you will get a *MuonObjectInfo.root* file with simple variables. 

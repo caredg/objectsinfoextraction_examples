@@ -67,6 +67,47 @@ Then follow these steps:
   cd ..
   rm -rf objectsinfoextraction_examples
 
+- Go to the TriggerInfo/TriggerInfoAnalyzer area.  Note that the code lives under `src`
+
+  ```
+  cd PhysicsObjectsInfo/PhysicsObjectsInfoExtractor
+  ```
+
+- Compile everything:
+
+  ```
+  scram b
+  ```
+
+- Make a soft link to the python configuration file
+
+```
+ln -s python/muonobjectextractor_cfg.py .
+```
+
+- Run the CMSSW executable in the background
+
+```
+cmsRun muonobjectextractor_cfg.py > muons.log 2>&1 &
+```
+
+- Check the development of the job:
+
+```
+tailf muons.log
+```
 
 
+As a result, you will get a - Run the CMSSW executable in the background
 
+```
+cmsRun triggerinfoanalyzer_cfg.py > full.log 2>&1 &
+```
+
+- Check the development of the job:
+
+```
+tailf full.log
+```
+
+As a result, you will get a *MuonObjectInfo.root* file with simple variables. 
